@@ -16,9 +16,9 @@ phases:
       - echo This is the finally block execution!
   post_build:
     commands:
-      - cp appspec.yml dist/my-angular-project/browser/
-      - cp -r deploy-scripts dist/my-angular-project/browser/
+      - cp appspec.yml dist/my-angular-project/
+      - cp -r deploy-scripts dist/my-angular-project/
 artifacts:
-  base-directory: 'dist/my-angular-project/browser'
+  base-directory: 'dist/my-angular-project'
   files:
     - '**/*'
