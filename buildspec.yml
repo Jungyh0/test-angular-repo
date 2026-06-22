@@ -4,7 +4,7 @@ phases:
     runtime-versions:
       nodejs: 20
     commands:
-      - npm install -g @angular/cli@17
+      - npm install
   pre_build:
     commands:
       - npm install
@@ -14,11 +14,9 @@ phases:
       - echo "Build completed."
     finally:
       - echo This is the finally block execution!
-  post_build:
-    commands:
-      - cp appspec.yml dist/my-angular-project/
-      - cp -r deploy-scripts dist/my-angular-project/
 artifacts:
   base-directory: 'dist/my-angular-project'
   files:
-    - '**/*'
+    - 'dist/my-angular-project/**/*'
+    - appspec.yml
+    - 'deploy-scripts**/*'
